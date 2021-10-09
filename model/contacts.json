@@ -1,62 +1,37 @@
 [
-  {
-    "id": 1,
-    "name": "Allen Raymond",
-    "email": "nulla.ante@vestibul.co.uk",
-    "phone": "(992) 914-3792"
-  },
-  {
-    "id": 2,
-    "name": "Chaim Lewis",
-    "email": "dui.in@egetlacus.ca",
-    "phone": "(294) 840-6685"
-  },
-  {
-    "id": 3,
-    "name": "Kennedy Lane",
-    "email": "mattis.Cras@nonenimMauris.net",
-    "phone": "(542) 451-7038"
-  },
-  {
-    "id": 4,
-    "name": "Wylie Pope",
-    "email": "est@utquamvel.net",
-    "phone": "(692) 802-2949"
-  },
-  {
-    "id": 5,
-    "name": "Cyrus Jackson",
-    "email": "nibh@semsempererat.com",
-    "phone": "(501) 472-5218"
-  },
-  {
-    "id": 6,
-    "name": "Abbot Franks",
-    "email": "scelerisque@magnis.org",
-    "phone": "(186) 568-3720"
-  },
-  {
-    "id": 7,
-    "name": "Reuben Henry",
-    "email": "pharetra.ut@dictum.co.uk",
-    "phone": "(715) 598-5792"
-  },
-  {
-    "id": 8,
-    "name": "Simon Morton",
-    "email": "dui.Fusce.diam@Donec.com",
-    "phone": "(233) 738-2360"
-  },
-  {
-    "id": 9,
-    "name": "Thomas Lucas",
-    "email": "nec@Nulla.com",
-    "phone": "(704) 398-7993"
-  },
-  {
-    "id": 10,
-    "name": "Alec Howard",
-    "email": "Donec.elementum@scelerisquescelerisquedui.net",
-    "phone": "(748) 206-2688"
-  }
+	{
+		"id": "5d7bdadb-2a20-41f0-aae2-bcf32a010f10",
+		"name": "Bodya",
+		"email": "bogdandicenko315@gmail.com",
+		"phone": "+380965703893"
+	},
+	{
+		"id": "a0c883e5-3323-4be3-96a1-8314e8064280",
+		"name": "Gomer",
+		"email": "gomer712@gmail.com",
+		"phone": "+3809603815"
+	},
+	{
+		"id": "73f0469c-1313-4c0d-b644-cdf017e44c39",
+		"name": "Noyal",
+		"email": "noyalchic@gmail.com",
+		"phone": "+380961924621"
+	},
+	{
+		"id": "03f5c5da-eeba-4eee-a0ff-d5612edc6ca1",
+		"name": "Wevern",
+		"email": "lolik193@gmail.com",
+		"phone": "+380960987461"
+	},
+	{
+		"id": "53d686f7-4c9d-4c4a-9e22-2eab669d8a8a",
+		"name": "Wevern",
+		"email": "lolik193@gmail.com",
+		"phone": "(123) 456-7890"
+	},
+	{
+		"id": "44b64e10-211d-4600-99d3-479df1c75321",
+		"name": "Numero",
+		"email": "numerol0912@gmail.com"
+	}
 ]
