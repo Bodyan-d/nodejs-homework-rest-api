@@ -5,8 +5,8 @@ const regularPhone = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im;
 
 const schemaContact = Joi.object({
 	name: Joi.string().alphanum().min(1).max(25).required(),
-	email: Joi.string().pattern(new RegExp(reqularEmail)).required(),
-	phone: Joi.string().pattern(new RegExp(regularPhone)).required(),
+	email: Joi.string().pattern(new RegExp(reqularEmail)),
+	phone: Joi.string().pattern(new RegExp(regularPhone)),
 }).with('phone', 'email');
 
 const validate = async (schema, obj, res, next) => {
