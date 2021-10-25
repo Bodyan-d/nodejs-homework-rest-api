@@ -1,20 +1,19 @@
-const express = require('express');
-const router = express.Router();
-const Contacts = require('../../repo');
-const { validateContact } = require('./validation');
+const Contacts = require('../repo/contacts');
 
-router.get('/', async (req, res, next) => {
+const getContacts = async (req, res, next) => {
 	try {
-		const contacts = await Contacts.listContacts();
+		const userId = req.user._id;
+		const contacts = await Contacts.listContacts(userId);
 		res.json({ status: 'success', code: 200, data: { contacts } });
 	} catch (error) {
 		next(error);
 	}
-});
+};
 
-router.get('/:contactId', async (req, res, next) => {
+const getContact = async (req, res, next) => {
 	try {
-		const contact = await Contacts.getContactById(req.params.contactId);
+		const userId = req.user._id;
+		const contact = await Contacts.getContactById(req.params.contactId, userId);
 
 		if (contact) {
 			return res
@@ -27,20 +26,22 @@ router.get('/:contactId', async (req, res, next) => {
 	} catch (error) {
 		next(error);
 	}
-});
+};
 
-router.post('/', validateContact, async (req, res, next) => {
+const createContact = async (req, res, next) => {
 	try {
-		const contact = await Contacts.addContact(req.body);
+		const userId = req.user._id;
+		const contact = await Contacts.addContact({ ...req.body, owner: userId });
 		res.status(201).json({ status: 'success', code: 201, data: { contact } });
 	} catch (error) {
 		next(error);
 	}
-});
+};
 
-router.delete('/:contactId', async (req, res, next) => {
+const deleteContact = async (req, res, next) => {
 	try {
-		const contact = await Contacts.removeContact(req.params.contactId);
+		const userId = req.user._id;
+		const contact = await Contacts.removeContact(req.params.contactId, userId);
 
 		if (contact) {
 			return res
@@ -53,13 +54,15 @@ router.delete('/:contactId', async (req, res, next) => {
 	} catch (error) {
 		next(error);
 	}
-});
+};
 
-router.put('/:contactId', async (req, res, next) => {
+const updateContact = async (req, res, next) => {
 	try {
+		const userId = req.user._id;
 		const contact = await Contacts.updateContact(
 			req.params.contactId,
-			req.body
+			req.body,
+			userId
 		);
 
 		if (contact) {
@@ -73,6 +76,12 @@ router.put('/:contactId', async (req, res, next) => {
 	} catch (error) {
 		next(error);
 	}
-});
+};
 
-module.exports = router;
+module.exports = {
+	getContacts,
+	getContact,
+	createContact,
+	deleteContact,
+	updateContact,
+};
