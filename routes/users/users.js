@@ -6,6 +6,8 @@ const {
 	login,
 	logout,
 	uploadAvatar,
+	verifyUser,
+	repeatEmailForVerifyUser,
 } = require('../../controllers/users');
 const { validateUser } = require('./validationUser');
 const { guard } = require('../../helpers/guard');
@@ -16,5 +18,8 @@ router.post('/signup', validateUser, signup);
 router.post('/login', validateUser, login);
 router.post('/logout', guard, logout);
 router.patch('/avatars', guard, upload.single('avatar'), uploadAvatar);
+
+router.get('/verify/:verificationToken', verifyUser);
+router.post('/verify', repeatEmailForVerifyUser);
 
 module.exports = router;
